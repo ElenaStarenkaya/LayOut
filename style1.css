@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); /*подключили шрифт*/
+
+*, *::before,*::after {  /*задаем условия для всех before after*/
+      box-sizing: border-box;  
+}
+
+header {
+    height: 500px;
+    background: url(img/Arge.jpg) no-repeat center;
+    background-size: cover;
+    color: white;
+    display: flex; /*сделали 2 заголовка друг за другом*/
+    display: -ms-flex;
+    display: -webkit-flex;
+    flex-direction: column; /*заголовки встали друг под другом*/
+    justify-content: center; /*выравниваем по центру по вертикали*/
+    text-align: center;
+}
+
+@keyframes moveLeft {
+0% {transform: translateX(-100%);} /*если поставить -1000%, тогда текст появится с самого верха страницы*/
+}
+
+@keyframes moveRight {
+    0% {transform: translateX(100%);}
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+h1 {
+    font-size: 3em;
+    animation: moveLeft 0.5s ease-out 0.3s backwards;
+}
+
+header>h2 {
+    font-size: 2em;
+    animation: moveRight 0.5s ease-out 0.8s backwards;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: auto 15px;
+}
+
+.row {
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    flex-wrap: wrap; /*если элементы не будут влезать по ширине экрана, то  они будут переноситься ниже*/
+    margin-left: -15px;
+    margin-right: -15px;
+} 
+
+[class*="col-"] {    /*обращаемся сразу к обоим классам col (можно просто через запятую перечислить)*/
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 1px;
+    max-width: 100%;
+}
+
+.col-1 {
+    flex: 0 0 50%; 
+}
+
+.col-2 {
+    flex: 0 0 33.33%;
+}
+
+.kartinka {
+    max-width: 100%; /*после этого сработает условие в 33%, то есть она уменьшится, до этого ее размер был намного больше*/
+}
+
+.ramka { 
+    border: 4px solid #dbdbdb; /*отдельно задали рамку через класс ramka*/
+    transition: .5s; /*рамка будет появляться на 0,5 секунды*/
+}
+
+.col-3 {
+    padding: 15px auto;
+    margin: 10px 0;
+    position: relative; /*будут следовать друг за другом*/
+    overflow: hidden;
+    /* border: 4px solid transparent;
+    transition: 400ms ease-out; */
+    flex: 0 0 33%; /*чтобы влезло 3 штуки*/
+    flex-wrap: wrap;
+}
+
+a>img {
+    width: 100%;
+    height: 100%;
+}
+
+.col-3 img {
+    display: block;
+    border: 4px solid #dbdbdb;
+    transition: 400ms ease-out;
+}
+
+.col-3:hover img {
+    transform: scale(1.2);
+}
+
+footer {
+    height: 100px;
+}
+
+footer p {
+    border-top: 10px dotted red; /*делаем черту снизу, альтернатива hr*/
+    padding: 20px;
+    text-align: center;
+}

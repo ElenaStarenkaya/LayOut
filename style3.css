@@ -1,0 +1,60 @@
+.container {
+    height: 500px;
+    padding: 15px 30px;
+    display: grid;
+    grid-template-areas: 
+    'area1 area2 area2 area2 area3'
+    'area1 area4 area5 area6 area3'
+    'area1 area4 area7 area7 area3';
+    /* grid-template-columns: 100px 200px 300px; */
+    /*grid-template-columns: 50px repeat(2, 1fr 2fr); /*у первой колонки ширина 50px*/
+    /* grid-template-columns: repeat(4, 1fr);  */
+    gap: 10px;
+    border-radius: 5px;
+    background-color: rgb(31, 31, 73);
+    color: #fff;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+[class*="item-"] {
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 130%;
+    padding: 4px;
+    margin: 10px;
+    background-color: royalblue;
+    text-align: center;
+}
+
+.container div:nth-child(odd) {
+    background-color: slateblue;
+}
+
+.item-1 {
+    grid-area: area1;
+}
+
+.item-2 {
+    grid-area: area2;
+}
+
+.item-3 {
+    grid-area: area3;
+}
+
+.item-4 {
+   grid-area: area4;
+}
+
+.item-5 {
+   grid-area: area5;
+}
+
+.item-6 {
+ grid-area: area6;
+}
+
+.item-7 {
+    grid-area: area7;
+}
